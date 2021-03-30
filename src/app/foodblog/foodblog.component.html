@@ -1,201 +1,119 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Foood Venture</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <button mat-raised-button type="submit" class="btn btn-outline-primary mr-2"
+                    (click)='getinfo()'>Login</button>
+            </li>
+            <li class="nav-item">
+                <button class="btn btn-outline-primary" mat-raised-button type="submit"
+                    (click)='onSelect()'>contact</button>
+            </li>
 
-
- <button mat-raised-button type="submit" (click)='getinfo()'>Login</button> 
- <button class="btn btn-primary" mat-raised-button type="submit" (click)='onSelect()'>contact</button> 
- 
-<!-- <a routerLink='foodblog/login' type="button">login</a> -->
-
-
-
-<header class="main_header">
-    <div class="d-flex justify-content-center align-items-center flex-column">
-        <h1 class="main_heading">FOOD VENTURE </h1>
-        <p class="main_para"> Welcome to food journey </p>
+        </ul>
     </div>
-    <div class="main_header__div d-flex align-items-start justify-content-center pl-5 flex-column shadow">
-        <p> Food Venture</p>
-        <h2>Explore The Food World</h2>
-        
-        
-        <button class="text-uppercase">Follow</button>
 
-    </div>
-</header>
+</nav>
 
 
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-xl-10 col-lg-10 col-md-11 mx-auto my-5 ">
-            <div class="row gx-5 mx-sm-auto">
-                <div class="col-lg-8 col-md-11 col-11 mx-auto">
-                    <div class="row gy-5">
-                        <div class="col-12 card p-4 shadow blog_left__div"> 
-                            <div class="d-flex justify-content-center align-items-center flex-column pt-3 pb-5">
-                                <h2>Gujrati Food</h2>
-                                <p class="blog-title"><span class="font-weight-light">Wednesday,2021</span> </p>
-
-                            </div>
-                            <figure class="right_side__img mb-5">
-                                <img src="https://images.unsplash.com/photo-1484980972926-edee96e0960d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjB8fGZvb2R8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60">
-                            </figure>
-                            <p>A Gujarati thali typically comprises of  one or two steamed or fried snacks called farsans, a green vegetable, a tuber or a gourd shaak (shaaks are main courses with vegetables and spices mixed together into a curry or a spicy dry dish), a kathol (braised pulses like beans, chickpea or dry peas), one or more yogurt dishes like dahi, kadhi (yogurt and pulses soup), raita or sweet shrikhand, rice or khichdi, daal usually toor dal, and sweets like halwas, basundi or shrikhand. </p>
-                            <p>Accompaniments include sweet, sour and spicy chutneys, pickles, ghee and a salad of chopped vegetables served raw or may be steamed in spices.  Much detailing goes into creating a balance of tastes and textures - you could have coarse, grainy, granular, smooth, uniform, dry and wet dishes on the same platter, the sweetness, bitterness, sourness and heat of each main course would vary between dishes, and the thali has more colours than a rainbow – the yellow of turmeric, the whiteness of dairy products, the redness of tomatos, the green of leafy vegetables, the brown of pulses, and the colours of various spices, relishes and salad vegetables, are harmoniously part of a single thali. </p>
-                            <div class='d-flex justify-content-between left_div_btns'>
-                               
-                                <div>
-                                    <button class="left_div__edit" id="like_btn">like
-
-                                    </button>
-
-                                </div>
-                                <div>
-                                    <button class="left_div__delete" >delete
-
-                                    </button>
-
-                                </div>
-                            </div>
-                            
 
 
+<div>
+    <header class="main_header">
+        <div class="text-center">
+            <h1 class="main_heading">FOOD VENTURE </h1>
+            <p class="main_para"> Welcome to food journey </p>
+        </div>
+        <div class="main_header__div pl-5 shadow">
+            <p>Food Venture</p>
+            <h2>Explore The Food World</h2>
+            <button class="text-uppercase btn btn-lg btn-success">Follow</button>
+
+
+        </div>
+    </header>
+
+    <div class="container mt-2">
+        <div class="row">
+            <div class="col-md-8 col-lg-8 col-sm-12 col-xs-12">
+                <div *ngFor="let blog of blogsData">
+                    <div class="card">
+                        <div class="m-4 text-center">
+                            <h2>{{blog.title}}</h2>
+                            <p>{{blog.date}}</p>
                         </div>
-                        <div class="col-12 card p-4 shadow blog_left__div"> 
-                            <div class="d-flex justify-content-center align-items-center flex-column pt-3 pb-5">
-                                <h1>Punjabi Food</h1>
-                                <p class="blog-title"><span class="font-weight-light">Thursday,2020</span> </p>
-
+                        <img class="card-img-top" src="{{blog.imgUrl}}" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-text">{{blog.blog}}</p>
+                            <div class="d-flex justify-content-between">
+                                <a href="#" class="btn btn-primary">Edit</a>
+                                <a href="#" class="btn btn-danger">Delete</a>
                             </div>
-                            <figure class="right_side__img mb-5">
-                                <img src="https://images.unsplash.com/photo-1502301103665-0b95cc738daf?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NzR8fGZvb2R8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60">
-                            </figure>
-                            
-                            <p>Accompaniments include sweet, sour and spicy chutneys, pickles, ghee and a salad of chopped vegetables served raw or may be steamed in spices.  Much detailing goes into creating a balance of tastes and textures - you could have coarse, grainy, granular, smooth, uniform, dry and wet dishes on the same platter, the sweetness, bitterness, sourness and heat of each main course would vary between dishes, and the thali has more colours than a rainbow – the yellow of turmeric, the whiteness of dairy products, the redness of tomatos, the green of leafy vegetables, the brown of pulses, and the colours of various spices, relishes and salad vegetables, are harmoniously part of a single thali. </p>
-                            <div class='d-flex justify-content-between left_div_btns'>
-                               
-                                <div>
-                                    <button class="left_div__edit" id="like_btn">like
-
-                                    </button>
-
-                                </div>
-                                <div>
-                                    <button class="left_div__delete" >delete
-
-                                    </button>
-
-                                </div>
-                            </div>
-                            
-
-
                         </div>
-                        <div class="col-12 card p-4 shadow blog_left__div"> 
-                            <div class="d-flex justify-content-center align-items-center flex-column pt-3 pb-5">
-                                <h1>Rajasthani Food</h1>
-                                <p class="blog-title"><span class="font-weight-light">Saturday,2020</span> </p>
-
-                            </div>
-                            <figure class="right_side__img mb-5">
-                                <img src="https://images.unsplash.com/photo-1588644525273-f37b60d78512?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8ZGFhbGJoYXR8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60">
-                            </figure>
-                            <p>Rajasthani cuisine is the cuisine of the Rajasthan region in West India. It was influenced by both the war-like lifestyles of its inhabitants and the availability of ingredients in this arid region. Food that could last for several days and could be eaten without heating was preferred </p>
-                            
-                            <div class='d-flex justify-content-between left_div_btns'>
-                               
-                                <div>
-                                    <button class="left_div__edit" id="like_btn">like
-
-                                    </button>
-
-                                </div>
-                                <div>
-                                    <button class="left_div__delete" >delete
-
-                                    </button>
-
-                                </div>
-                            </div>
-                            
-
-
-                        </div>
-                        <div class="col-12 card p-4 shadow blog_left__div"> 
-                            <div class="d-flex justify-content-center align-items-center flex-column pt-3 pb-5">
-                                <h1>Fast Food</h1>
-                                <p class="blog-title"><span class="font-weight-light">Monday,2019</span> </p>
-
-                            </div>
-                            <figure class="right_side__img mb-5">
-                                <img src="https://images.unsplash.com/photo-1594179047519-f347310d3322?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8ZmFzdCUyMGZvb2R8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60">
-                            </figure>
-                            <p>Fast food is a type of mass-produced food designed for commercial resale and with a strong priority placed on "speed of service" versus other relevant factors involved in culinary science. Fast food was originally created as a commercial strategy to accommodate the larger numbers of busy commuters, travelers and wage workers who often did not have the time to sit down at a public house or diner and wait for their meal. By making speed of service the priority, this ensured that customers with strictly limited time (a commuter stopping to procure dinner to bring home to their family, for example, or an hourly laborer on a short lunch break) were not inconvenienced by waiting for their food to be cooked on-the-spot (as is expected from a traditional "sit down" restaurant). In 2018, the fast food industry was worth an estimated $570 billion globally.. </p>
-                            
-                            <div class='d-flex justify-content-between left_div_btns'>
-                               
-                                <div>
-                                    <button class="left_div__edit" id="like_btn">like
-
-                                    </button>
-
-                                </div>
-                                <div>
-                                    <button class="left_div__delete" >delete
-
-                                    </button>
-
-                                </div>
-                            </div>
-                            
-
-
-                        </div>
-                        
                     </div>
-
                 </div>
-                <div class="col-lg-3 col-md-7 col-11 justify-content-end m-lg-0 m-auto">
-                    <div class="row gf-5 left_div_blog">
-                        <div class="col-12 about_me_div shadow">
-                            <p>Food Blog</p>
-                            <p>Read and Express your views regarding this never ending journey</p>
-                           
-            
-                        </div>
-                        <div class="popular_post">
-                            <div class="right_sub_div shadow">
-                                <div class="row">
-                                    <div class="col-3 popular_post_img1 py-2 pl-2">
-            
-                                    </div>
-                                    <div class="col-9">
-                                        <h3>Corona</h3>
-                                        <p>Pandemic</p>
-                                    </div>
-            
+            </div>
+            <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12">
+                <div class="about_me_div shadow p-2">
+                    <p>Food Blog</p>
+                    <p>Read and Express your views regarding this never ending journey</p>
+                </div>
+                <div class="popular_post">
+                    <div class="right_sub_div shadow">
+                        <div class="row">
+                            <div class="col-3 popular_post_img1 py-2 pl-2">
+                            </div>
+
+
+
+
+
+                                <div class="col-9">
+                                    <h3>Corona</h3>
+                                    <p>Pandemic</p>
+                                
                                 </div>
-                                <div class="row">
-                                    <div class="col-3 popular_post_img2 py-2 pl-2">
-            
-                                    </div>
+                        </div>
+                            <div class="row">
+                                <div class="col-3 popular_post_img2 py-2 pl-2">
+                                </div>
+
+
                                     <div class="col-9">
                                         <h3>Bill Gates</h3>
                                         <p> CEO MICROSOFT</p>
                                     </div>
-            
-                                </div>
-                                <div class="row">
+
+
+
+                            </div>    
+
+                            <div class="row">
                                     <div class="col-3 popular_post_img3 py-2 pl-2">
-            
                                     </div>
-                                    <div class="col-9">
-                                        <h3>Food Factory</h3>
-                                        <p>Pizza</p>
-                                    </div>
-            
+                                        <div class="col-9">
+                                            <h3>Food Factory</h3>
+                                            <p>Pizza</p>
+                                        </div>
+
+                                    
+                                    
+
+
+
                                 </div>
+
                             </div>
-            
-                        </div>
+
+                        
+
+
+
                         <div class="right_di_post">
                             <div class='right_div__title py-4 pl-2'>
                                 <h2>Advertise</h2>
@@ -204,115 +122,152 @@
                                 <div class="advertise_img bg-light shadow">
                                     <p>Ads goes here</p>
                                 </div>
+
                             </div>
                         </div>
                         <div class="right_div__title py-4 pl-2 pt-4 ">
                             <h3>Explore</h3>
                         </div>
                         <div class="explore_main right_sub__div">
-                            <a href="https://www.youtube.com/watch?v=0SPwwpruGIA" target="_food" class="badge shadow text-uppercase">FOOD ExPLoring</a>
-                            <a href="https://www.youtube.com/watch?v=0SPwwpruGIA" target="_food" class="badge shadow text-uppercase">Cuisine</a>
-                            <a href="https://www.youtube.com/watch?v=0SPwwpruGIA" target="_food" class="badge shadow text-uppercase">Pizza Corner</a>
-                            <a href="https://www.youtube.com/watch?v=0SPwwpruGIA" target="_food" class="badge shadow text-uppercase">South Indian</a>
+                            <a href="https://www.youtube.com/watch?v=0SPwwpruGIA" target="_food"
+                                class="badge shadow text-uppercase">FOOD
+                                ExPLoring</a>
+                            <a href="https://www.youtube.com/watch?v=0SPwwpruGIA" target="_food"
+                                class="badge shadow text-uppercase">Cuisine</a>
+                            <a href="https://www.youtube.com/watch?v=0SPwwpruGIA" target="_food"
+                                class="badge shadow text-uppercase">Pizza
+                                Corner</a>
+                            <a href="https://www.youtube.com/watch?v=0SPwwpruGIA" target="_food"
+                                class="badge shadow text-uppercase">South
+                                Indian</a>
 
                         </div>
 
-            
-                    </div>
-                    <div class="right_div_post">
-                        <div class="right_div__title py-4 pl-2 ">
-                            <h2>Inspiration</h2>
+                        <div class="right_div_post">
+                            <div class="right_div__title py-4 pl-2 ">
+                                <h2>Inspiration</h2>
+
+                            </div>
+                            <div class="right_sub_div">
+                                <div class="row gx-3">
+                                    <div class="col-6">
+                                        <figure>
+                                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3IXUDuzKAXtWL56b5hN44Jks0yOEwke4i_w&usqp=CAU"
+                                                class="img-fluid shadow">
+                                        </figure>
+                                    </div>
+
+
+
+                                    <div class="col-6">
+                                        <figure>
+                                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwLwAEIA_hYGbkw2ylfNMh0N7waTBjKMKScw&usqp=CAU"
+                                                class="img-fluid shadow">
+                                        </figure>
+                                    </div>
+
+                                    <div class="col-6">
+                                        <figure>
+                                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZrAf1Yfdj--EQPorW7wZKtjRzltXR98yNSQ&usqp=CAU"
+                                                class="img-fluid shadow">
+                                        </figure>
+                                    </div>
+                                    <div class="col-6">
+                                        <figure>
+                                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUte4wU0ILkdfMg39eDN1JJ58RWkF2tyML6Q&usqp=CAU"
+                                                class="img-fluid shadow">
+                                        </figure>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
 
                         </div>
-                        <div class="right_sub_div">
-                            <div class="row gx-3">
-                                <div class="col-6">
-                                    <figure>
-                                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3IXUDuzKAXtWL56b5hN44Jks0yOEwke4i_w&usqp=CAU" class="img-fluid shadow">
-                                    </figure>
-                                </div>
-                                <div class="col-6">
-                                    <figure>
-                                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwLwAEIA_hYGbkw2ylfNMh0N7waTBjKMKScw&usqp=CAU" class="img-fluid shadow">
-                                    </figure>
-                                </div>
-                                <div class="col-6">
-                                    <figure>
-                                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZrAf1Yfdj--EQPorW7wZKtjRzltXR98yNSQ&usqp=CAU" class="img-fluid shadow">
-                                    </figure>
-                                </div>
-                                <div class="col-6">
-                                    <figure>
-                                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUte4wU0ILkdfMg39eDN1JJ58RWkF2tyML6Q&usqp=CAU" class="img-fluid shadow">
-                                    </figure>
-                                </div>
+
+
+
+                        <div class="right_div_post">
+                            <div class="right_div__title py-4 pl-2">
+                                <h2>Follow
+                                    Us</h2>
+                            </div>
+
+
+                            <div class="right_sub_div d-flex justify-content-around">
+
+
+
+                                <a href="https://www.instagram.com/accounts/login/">Instagram</a>
+
+
+
+                                <a href="https://www.facebook.com/">Facebook</a>
+
+
+
+                                <a href="https://www.linkedin.com/login">LinkedIn</a>
+
+
+
+
+
+                            </div>
+
+
+                        </div>
+                        <div class="right_div_post">
+                            <div class="right_div__title py-4 pl-2">
+                                <h2>Subscribe
+                                </h2>
+                            </div>
+                            <div class="right_sub_div ">
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="exampleInputEmail1" class="form-label">Email</label>
+                                        <input type="email" class="form-control" id="exampleInputEmail1"
+                                            aria-describedby="emailHelp" placeholder="name@gmail.com">
+                                        <div id="emailHelp" class="form-text">
+                                            We'll
+                                            never
+                                            share
+                                            your
+                                            email
+                                            with
+                                            anyone
+                                            else.
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3 form-check">
+                                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                        <label class="form-check-label" for="exampleCheck1">Check
+                                            me
+                                            out</label>
+                                    </div>
+                                    <button type="submit" class="subs_btn btn-primary">Submit</button>
+                                </form>
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="right_div_post">
-                        <div class="right_div__title py-4 pl-2">
-                            <h2>Follow Us</h2>
-                        </div>
-                        <div class="right_sub_div d-flex justify-content-around">
-                            
-                            <a href="https://www.instagram.com/accounts/login/">Instagram</a>
-                            
-                            <a href="https://www.facebook.com/">Facebook</a>
-                            
-                            <a href="https://www.linkedin.com/login">LinkedIn</a>
-                            
-
-                        </div>
-                            
-
-                        
-                    </div>
-                    <div class="right_div_post">
-                        <div class="right_div__title py-4 pl-2">
-                            <h2>Subscribe</h2>
-                        </div>
-                        <div class="right_sub_div ">
-                            <form>
-                                <div class="mb-3">
-                                  <label for="exampleInputEmail1" class="form-label">Email</label>
-                                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="name@gmail.com">
-                                  <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-                                </div>
-                                
-                                <div class="mb-3 form-check">
-                                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                  <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                                </div>
-                                <button type="submit" class="subs_btn btn-primary">Submit</button>
-                              </form>
-
-                            
-                            
-
-                        </div>
-                            
-
-                        
-                    </div>
-
-                     
                 </div>
 
+
             </div>
+
+
+
+
+
+
+
+
+
+
+            <footer>
+                <p class="text-center m-2 bg-light">
+                    Food Venture-"a never
+                    ending journey"</p>
+            </footer>
         </div>
-        
-
-    </div>
-    
-
-    
-
-</div>
-
-
-
-
-<footer>
-    <p class="text-center py-4 bg-light">Food Venture-"a never ending journey"</p>
-</footer>

@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Amiri&family=Assistant:wght@200&display=swap');
 @import '~bootstrap/dist/css/bootstrap.min.css';
-@import '~font-awesome/css/font-awesome.css';
+
 :root{
     --bg-size:100% 100%;
     --main_color:#fff;
@@ -26,6 +26,9 @@
 html{
     font-size: 62.5%;
 
+}
+.card .card-img-top{
+    height: 500px!important;;
 }
 p,label,input::placeholder{
     font-size: 1.3rem;
@@ -142,6 +145,7 @@ a:hover{
 .popular_post_img1{
     background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRz0UlJcRNuZkrSNSm52SurX0cyqHMkjNHlrg&usqp=CAU");
     background-size: 100% 100%;
+    
 
 
 }

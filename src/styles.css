@@ -1,5 +1,8 @@
-
 body{
     background:hsl(84,3%,94%);
-
+    /* overflow-y: hidden; */
 }
+
+@media (max-width:768px){
+
+} 
