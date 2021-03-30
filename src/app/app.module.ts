@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import {HttpClientModule} from '@angular/common/http';
+import { EditComponent } from './edit/edit.component';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import {HttpClientModule} from '@angular/common/http';
     LoginComponent,
     HomeComponent,
     ContactComponent,
+    EditComponent,
     
     
 

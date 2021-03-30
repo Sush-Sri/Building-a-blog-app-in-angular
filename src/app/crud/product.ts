@@ -1,8 +1,7 @@
-export interface Idata{
-    id:string;
+export interface Product {
+    id:number;
     title:string;
     imgUrl:string;
     blog:string;
-
 
 }

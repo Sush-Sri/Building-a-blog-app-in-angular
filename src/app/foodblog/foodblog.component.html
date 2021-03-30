@@ -18,10 +18,8 @@
         </ul>
     </div>
 
+
 </nav>
-
-
-
 
 <div>
     <header class="main_header">
@@ -41,18 +39,18 @@
     <div class="container mt-2">
         <div class="row">
             <div class="col-md-8 col-lg-8 col-sm-12 col-xs-12">
-                <div *ngFor="let blog of blogsData">
+                <div *ngFor="let blog of products">
                     <div class="card">
                         <div class="m-4 text-center">
                             <h2>{{blog.title}}</h2>
-                            <p>{{blog.date}}</p>
+                            
                         </div>
                         <img class="card-img-top" src="{{blog.imgUrl}}" alt="Card image cap">
                         <div class="card-body">
                             <p class="card-text">{{blog.blog}}</p>
                             <div class="d-flex justify-content-between">
-                                <a href="#" class="btn btn-primary">Edit</a>
-                                <a href="#" class="btn btn-danger">Delete</a>
+                                <button class="btn btn-primary" (click)="editBlog(blog.id)">Edit</button>
+                                <button class="btn btn-danger" (click)="deleteBlog(blog.id)">Delete</button>
                             </div>
                         </div>
                     </div>
@@ -68,206 +66,194 @@
                         <div class="row">
                             <div class="col-3 popular_post_img1 py-2 pl-2">
                             </div>
-
-
-
-
-
-                                <div class="col-9">
-                                    <h3>Corona</h3>
-                                    <p>Pandemic</p>
-                                
-                                </div>
-                        </div>
-                            <div class="row">
-                                <div class="col-3 popular_post_img2 py-2 pl-2">
-                                </div>
-
-
-                                    <div class="col-9">
-                                        <h3>Bill Gates</h3>
-                                        <p> CEO MICROSOFT</p>
-                                    </div>
-
-
-
-                            </div>    
-
-                            <div class="row">
-                                    <div class="col-3 popular_post_img3 py-2 pl-2">
-                                    </div>
-                                        <div class="col-9">
-                                            <h3>Food Factory</h3>
-                                            <p>Pizza</p>
-                                        </div>
-
-                                    
-                                    
-
-
-
-                                </div>
-
-                            </div>
-
-                        
-
-
-
-                        <div class="right_di_post">
-                            <div class='right_div__title py-4 pl-2'>
-                                <h2>Advertise</h2>
-                            </div>
-                            <div class="right_sub_div">
-                                <div class="advertise_img bg-light shadow">
-                                    <p>Ads goes here</p>
-                                </div>
+                            <div class="col-9">
+                                <h3>Corona</h3>
+                                <p>Pandemic</p>
 
                             </div>
                         </div>
-                        <div class="right_div__title py-4 pl-2 pt-4 ">
-                            <h3>Explore</h3>
-                        </div>
-                        <div class="explore_main right_sub__div">
-                            <a href="https://www.youtube.com/watch?v=0SPwwpruGIA" target="_food"
-                                class="badge shadow text-uppercase">FOOD
-                                ExPLoring</a>
-                            <a href="https://www.youtube.com/watch?v=0SPwwpruGIA" target="_food"
-                                class="badge shadow text-uppercase">Cuisine</a>
-                            <a href="https://www.youtube.com/watch?v=0SPwwpruGIA" target="_food"
-                                class="badge shadow text-uppercase">Pizza
-                                Corner</a>
-                            <a href="https://www.youtube.com/watch?v=0SPwwpruGIA" target="_food"
-                                class="badge shadow text-uppercase">South
-                                Indian</a>
-
-                        </div>
-
-                        <div class="right_div_post">
-                            <div class="right_div__title py-4 pl-2 ">
-                                <h2>Inspiration</h2>
-
+                        <div class="row">
+                            <div class="col-3 popular_post_img2 py-2 pl-2">
                             </div>
-                            <div class="right_sub_div">
-                                <div class="row gx-3">
-                                    <div class="col-6">
-                                        <figure>
-                                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3IXUDuzKAXtWL56b5hN44Jks0yOEwke4i_w&usqp=CAU"
-                                                class="img-fluid shadow">
-                                        </figure>
-                                    </div>
+
+
+                            <div class="col-9">
+                                <h3>Bill Gates</h3>
+                                <p> CEO MICROSOFT</p>
+                            </div>
 
 
 
-                                    <div class="col-6">
-                                        <figure>
-                                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwLwAEIA_hYGbkw2ylfNMh0N7waTBjKMKScw&usqp=CAU"
-                                                class="img-fluid shadow">
-                                        </figure>
-                                    </div>
+                        </div>
 
-                                    <div class="col-6">
-                                        <figure>
-                                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZrAf1Yfdj--EQPorW7wZKtjRzltXR98yNSQ&usqp=CAU"
-                                                class="img-fluid shadow">
-                                        </figure>
-                                    </div>
-                                    <div class="col-6">
-                                        <figure>
-                                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUte4wU0ILkdfMg39eDN1JJ58RWkF2tyML6Q&usqp=CAU"
-                                                class="img-fluid shadow">
-                                        </figure>
-                                    </div>
+                        <div class="row">
+                            <div class="col-3 popular_post_img3 py-2 pl-2">
+                            </div>
+                            <div class="col-9">
+                                <h3>Food Factory</h3>
+                                <p>Pizza</p>
+                            </div>
+
+
+
+
+
+
+                        </div>
+
+                    </div>
+
+
+
+
+
+                    <div class="right_di_post">
+                        <div class='right_div__title py-4 pl-2'>
+                            <h2>Advertise</h2>
+                        </div>
+                        <div class="right_sub_div">
+                            <div class="advertise_img bg-light shadow">
+                                <p>Ads goes here</p>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="right_div__title py-4 pl-2 pt-4 ">
+                        <h3>Explore</h3>
+                    </div>
+                    <div class="explore_main right_sub__div">
+                        <a href="https://www.youtube.com/watch?v=0SPwwpruGIA" target="_food"
+                            class="badge shadow text-uppercase">FOOD
+                            ExPLoring</a>
+                        <a href="https://www.youtube.com/watch?v=0SPwwpruGIA" target="_food"
+                            class="badge shadow text-uppercase">Cuisine</a>
+                        <a href="https://www.youtube.com/watch?v=0SPwwpruGIA" target="_food"
+                            class="badge shadow text-uppercase">Pizza
+                            Corner</a>
+                        <a href="https://www.youtube.com/watch?v=0SPwwpruGIA" target="_food"
+                            class="badge shadow text-uppercase">South
+                            Indian</a>
+
+                    </div>
+
+                    <div class="right_div_post">
+                        <div class="right_div__title py-4 pl-2 ">
+                            <h2>Inspiration</h2>
+
+                        </div>
+                        <div class="right_sub_div">
+                            <div class="row gx-3">
+                                <div class="col-6">
+                                    <figure>
+                                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3IXUDuzKAXtWL56b5hN44Jks0yOEwke4i_w&usqp=CAU"
+                                            class="img-fluid shadow">
+                                    </figure>
                                 </div>
 
 
 
+                                <div class="col-6">
+                                    <figure>
+                                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwLwAEIA_hYGbkw2ylfNMh0N7waTBjKMKScw&usqp=CAU"
+                                            class="img-fluid shadow">
+                                    </figure>
+                                </div>
+
+                                <div class="col-6">
+                                    <figure>
+                                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZrAf1Yfdj--EQPorW7wZKtjRzltXR98yNSQ&usqp=CAU"
+                                            class="img-fluid shadow">
+                                    </figure>
+                                </div>
+                                <div class="col-6">
+                                    <figure>
+                                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUte4wU0ILkdfMg39eDN1JJ58RWkF2tyML6Q&usqp=CAU"
+                                            class="img-fluid shadow">
+                                    </figure>
+                                </div>
                             </div>
+
+
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="right_div_post">
+                        <div class="right_div__title py-4 pl-2">
+                            <h2>Follow
+                                Us</h2>
+                        </div>
+
+
+                        <div class="right_sub_div d-flex justify-content-around">
+
+
+
+                            <a href="https://www.instagram.com/accounts/login/">Instagram</a>
+
+
+
+                            <a href="https://www.facebook.com/">Facebook</a>
+
+
+
+                            <a href="https://www.linkedin.com/login">LinkedIn</a>
+
+
+
+
 
                         </div>
 
 
-
-                        <div class="right_div_post">
-                            <div class="right_div__title py-4 pl-2">
-                                <h2>Follow
-                                    Us</h2>
-                            </div>
-
-
-                            <div class="right_sub_div d-flex justify-content-around">
-
-
-
-                                <a href="https://www.instagram.com/accounts/login/">Instagram</a>
-
-
-
-                                <a href="https://www.facebook.com/">Facebook</a>
-
-
-
-                                <a href="https://www.linkedin.com/login">LinkedIn</a>
-
-
-
-
-
-                            </div>
-
-
+                    </div>
+                    <div class="right_div_post">
+                        <div class="right_div__title py-4 pl-2">
+                            <h2>Subscribe
+                            </h2>
                         </div>
-                        <div class="right_div_post">
-                            <div class="right_div__title py-4 pl-2">
-                                <h2>Subscribe
-                                </h2>
-                            </div>
-                            <div class="right_sub_div ">
-                                <form>
-                                    <div class="mb-3">
-                                        <label for="exampleInputEmail1" class="form-label">Email</label>
-                                        <input type="email" class="form-control" id="exampleInputEmail1"
-                                            aria-describedby="emailHelp" placeholder="name@gmail.com">
-                                        <div id="emailHelp" class="form-text">
-                                            We'll
-                                            never
-                                            share
-                                            your
-                                            email
-                                            with
-                                            anyone
-                                            else.
-                                        </div>
+                        <div class="right_sub_div ">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail1"
+                                        aria-describedby="emailHelp" placeholder="name@gmail.com">
+                                    <div id="emailHelp" class="form-text">
+                                        We'll
+                                        never
+                                        share
+                                        your
+                                        email
+                                        with
+                                        anyone
+                                        else.
                                     </div>
+                                </div>
 
-                                    <div class="mb-3 form-check">
-                                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                        <label class="form-check-label" for="exampleCheck1">Check
-                                            me
-                                            out</label>
-                                    </div>
-                                    <button type="submit" class="subs_btn btn-primary">Submit</button>
-                                </form>
-                            </div>
+                                <div class="mb-3 form-check">
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                    <label class="form-check-label" for="exampleCheck1">Check
+                                        me
+                                        out</label>
+                                </div>
+                                <button type="submit" class="subs_btn btn-primary">Submit</button>
+                            </form>
                         </div>
                     </div>
                 </div>
-
-
             </div>
 
 
-
-
-
-
-
-
-
-
-            <footer>
-                <p class="text-center m-2 bg-light">
-                    Food Venture-"a never
-                    ending journey"</p>
-            </footer>
         </div>
+    </div>
+
+    <footer>
+        <p class="text-center m-2 bg-light">
+            Food Venture-"a never
+            ending journey"</p>
+    </footer>
+
+</div>
