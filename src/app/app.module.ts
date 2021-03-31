@@ -8,7 +8,14 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import {HttpClientModule} from '@angular/common/http';
-import { EditComponent } from './edit/edit.component';
+
+import { CreateComponent } from './create/create.component';
+import {AddComponent} from './add/add.component';
+
+import { FormsModule }   from '@angular/forms';
+import { UpdateComponent } from './update/update.component';
+
+
 
 
 @NgModule({
@@ -18,7 +25,11 @@ import { EditComponent } from './edit/edit.component';
     LoginComponent,
     HomeComponent,
     ContactComponent,
-    EditComponent,
+    
+    CreateComponent,
+    AddComponent,
+    UpdateComponent,
+    
     
     
 
@@ -26,7 +37,8 @@ import { EditComponent } from './edit/edit.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
     
     
   ],

@@ -1,0 +1,41 @@
+<style>
+    a {
+        font-size: 20px;
+    }
+</style>
+<!--nav start-->
+
+<!--navbar end-->
+<!-- <button class="btn btn-outline-primary btn-info" routerLink="/add">Add new Blog</button> -->
+<a routerLink='/'>back </a>
+
+
+<section style="background-color:lavenderblush" style="margin-top: 50px;">
+    <table class="container col-sm-6">
+        <div *ngFor="let i of items">
+            <div class="card">
+                <div class="m-4 text center">
+
+                    <h3 style="color:rgb(15, 8, 15)">
+                        {{i.title}}
+                    </h3>
+                </div>
+                <img class="card-img-top" src='{{i.imgUrl}}' height="350px" width="600px" alt="Card image cap">
+                <div class="card-body">
+                    <p class="card-text">{{i.blog}}</p>
+
+
+                    <button type="button" class="btn btn-info " style="margin: 5px 5px 10px 5px;"> <a
+                            [routerLink]="['/create', i.id]"
+                            style="text-decoration:none; color: aliceblue;">Edit</a></button>
+                    <!-- <button type="button" class="btn btn-info" style="margin: 5px 5px 10px 5px;"
+                    (click)="OnDelete(i.id)">Delete </button> -->
+                    
+                </div>
+
+            </div>
+        </div>
+        <br>
+    </table>
+</section>
+<router-outlet></router-outlet>

@@ -6,6 +6,7 @@ import { blogs } from '../constants/staticBlogs';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CrudService } from '../crud/crud.service';
 import {Idata} from '../data';
+import { CreateService } from '../create/create.service';
 
 
 @Component({
@@ -18,7 +19,7 @@ export class FoodblogComponent implements OnInit {
   blogsData = blogs;
   products: Idata[] = [];
 
-  constructor(private router: Router, private com: CommomService, public crudService: CrudService) { }
+  constructor(private router: Router, private com: CommomService, public crudService: CrudService, public createService:CreateService) { }
 
 
 
@@ -43,7 +44,7 @@ export class FoodblogComponent implements OnInit {
     }
   editBlog(event:any){
     console.log(event)
-    // this.crudService.update(event)
+    // this.createService.update(event)
 
   }
   deleteBlog(event:any){

@@ -1,5 +1,5 @@
 export interface Idata{
-    id:string;
+    id:number;
     title:string;
     imgUrl:string;
     blog:string;
